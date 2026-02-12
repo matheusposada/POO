@@ -23,7 +23,13 @@ Criando um PAT no github:
 
 1. Vá em Settings 
 1. Vá em Developer Settings
-1. Vá Personal access tokens
+1. Vá em Personal access tokens
+1. Vá em Tokens (classic)
+1. Vá em Generate new token
+1. Vá em Generate new token (classic)
+1. marque o repo, defina o nome e a data de expiração
+1. por fim, vá em generate token
+1. salve o token pois nunca mais será exibido
 
 
 
@@ -41,3 +47,7 @@ git config --global credential.helper 'cache --timeout=3600'
 
 ## Qual a diferença entre git merge e git rebase?
 
+A principal diferença é que o
+git merge une branches preservando o histórico original e criando um novo "commit de merge", enquanto o git rebase reescreve o histórico, reposicionando os commits da sua branch no topo da branch de destino para uma linha de tempo linear.
+O uso do merge é ideal para integrar alterações finalizadas a branch principal.
+Já o Rebase é ideal para atualizar a branch local com a main antes de integrar, mantendo o trabalho organizado.
