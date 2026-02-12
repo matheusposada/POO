@@ -21,15 +21,23 @@ Um Personal Access Token (PAT)
 
 Criando um PAT no github:
 
-1. Settings 
-1. Developer Settings
-1. Personal access tokens
+1. Vá em Settings 
+1. Vá em Developer Settings
+1. Vá Personal access tokens
 
 
 
 
 ### - Salvar em cache as credenciais do PAT
 
+O método de salvar as credênciais em cache garante que o PAT ficará na memória por um tempo determinado, tirando a necessidade do usuário precisar colocar as suas credenciais a cada push para o github
+
+```
+git config --global credential.helper cache
+
+git config --global credential.helper 'cache --timeout=3600'
+
+```
 
 ## Qual a diferença entre git merge e git rebase?
 
