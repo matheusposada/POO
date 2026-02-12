@@ -6,7 +6,7 @@
 
 ## Laboratórios
 
-- [Laboratório 01](POO/lab-01) - Sistema de Controle de Versão 
+- [Laboratório 01](POO/POO/lab-01) - Sistema de Controle de Versão 
 
 ## Aulas
 
