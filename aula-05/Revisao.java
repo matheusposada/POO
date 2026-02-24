@@ -26,9 +26,9 @@ void main() {
      * int[] vet = new int[100];
      * int n = 3;
      * for (int i = 0; i < vet.length; i++) {
-     *      vet[i] = n;
-     *      n = n + 2;
-     *      IO.print(vet[i] + " ");
+     * vet[i] = n;
+     * n = n + 2;
+     * IO.print(vet[i] + " ");
      * }
      * 
      */
@@ -36,27 +36,26 @@ void main() {
     // printar matriz 1 2 3
     // 4 5 6
     // 7 8 9
-    /*
-     * int[][] matriz = {
-     * { 1, 2, 3 },
-     * { 4, 5, 6 },
-     * { 7, 8, 9 }
-     * };
-     * 
-     * for (int i = 0; i < 3; i++) {
-     * for (int j = 0; j < 3; j++) {
-     * IO.println(matriz[i][j]);
-     * IO.println(" ");
-     * 
-     * }
-     * }
-     */
+
+    int[][] matriz = {
+            { 1, 2, 3 },
+            { 4, 5, 6 },
+            { 7, 8, 9 }
+    };
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            IO.print(matriz[i][j] + " ");
+
+        }
+        IO.println(" ");
+    }
 
     // for each
     /*
      * int[] num = { 3, 4, 5, 8 };
-     *      for (int num: vetor){
-     *      IO.println(num);
+     * for (int num: vetor){
+     * IO.println(num);
      * }
      */
 
