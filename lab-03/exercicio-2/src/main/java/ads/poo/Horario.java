@@ -97,25 +97,37 @@ public class Horario {
         };
     }
 
+    private String unidadeDezena(int valor){
+        if (valor >= 20) {
+            int unidade = valor % 10;
+            int dezena = valor - unidade;
+            String unidadeExtenso = converterParaExtenso(unidade);
+            String dezenaExtenso = converterParaExtenso(dezena);
+            return String.format("%s e %s", dezenaExtenso, unidadeExtenso);
+        }
+        return converterParaExtenso(valor);
+    }
+
+    private String validarGenero(int valor){
+        if (valor == 1){
+            String feminino = "uma";
+        } else if (valor == 2) {
+            String feminino = "duas";
+        }
+
+        return validarGenero();
+    }
+
     public String porExtenso(){
 
-        int unidadeHora = this.hora % 10;
-        int dezenaHora = (this.hora /10) * 10;
-        int unidadeMinuto = this.minuto % 10;
-        int dezenaMinuto = (this.minuto /10) * 10;
-        int unidadeSegundo = this.segundo % 10;
-        int dezenaSegundo = (this.segundo/10) * 10;
+        String hEx = unidadeDezena(this.hora);
+        String mEx = unidadeDezena(this.minuto);
+        String sEx = unidadeDezena(this.segundo);
 
-
-        String hEx = converterParaExtenso(this.hora);
-        String mEx = converterParaExtenso(this.minuto);
-        String sEx = converterParaExtenso(this.segundo);
-
-        return hEx + " " + mEx + " " + sEx;
-
-
-
+        return hEx + " horas, " + mEx + " minutos, e " + sEx + " segundos!";
     }
+
+
 
 
 }
