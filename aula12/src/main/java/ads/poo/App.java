@@ -14,18 +14,18 @@ public class App {
         }
     }
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         App app = new App();
         int opcao = 0;
 
         do {
             IO.println("""
-                   ..:: MENU::..");
-                   "1 - Cadastrar livro.");
-                   "2 - Listar todos os livros.");
-                   "3 - Listar todos os livros publicados no ano.");
-                   "4 - Alterar dados de um livro.");
-                   "5 - Sair.""");
+                   ..:: MENU::..;
+                   1 - Cadastrar livro.;
+                   2 - Listar todos os livros.;
+                   3 - Listar todos os livros publicados no ano.;
+                   4 - Alterar dados de um livro.;
+                   5 - Sair.""");
 
             opcao = Integer.parseInt(IO.readln("Entre com uma opção"));
             app.menu(opcao);
@@ -34,7 +34,7 @@ public class App {
 
 
     void cadastrarLivro(){
-        var isbn = IO.readln("Código ISBN");
+        var isbn = IO.readln("Código ISBN: ");
         var autor = IO.readln("autor: ");
         var titulo = IO.readln("Titulo: ");
         var ano = Integer.parseInt(IO.readln("ano: "));
@@ -43,7 +43,7 @@ public class App {
 
         if (!livro.containsKey(isbn)){
 
-            livro.put(isbn, new Livro(isbn, autor, titulo, ano));
+            livro.put(isbn, novoLivro);
 
         }
 
@@ -59,15 +59,31 @@ public class App {
 
     void listarLivrosdoAno(){
 
-        livro.forEach((ano, livro)->{
-            IO.println(livro);
+        int buscarAno = Integer.parseInt(IO.readln("digite o ano desejado: "));
+
+        livro.forEach((isbn, livro)->{
+            if(livro.getAno() == buscarAno){
+                IO.println(livro);
+            }
         });
 
     }
 
     void alterarDados(){
+        var isbn = IO.readln("Digite o ISBN: ");
 
+        if (!livro.containsKey(isbn)) {
+            IO.println("Livro não encontrado!");
+        } else {
 
+            var novoAutor = IO.readln("Novo Autor: ");
+            var novoTitulo = IO.readln("Novo Titulo: ");
+            var novoAno = Integer.parseInt(IO.readln("Novo Ano: "));
+
+            livro.put(isbn, new Livro(isbn, novoAutor, novoTitulo, novoAno));
+
+            IO.println("Livro alterado com sucesso!");
+        }
 
     }
 
