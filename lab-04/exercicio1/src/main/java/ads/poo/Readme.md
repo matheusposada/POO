@@ -26,10 +26,10 @@ classDiagram
     class Endereco {
         -rua: String
         -numero: int
-        -bairro: String
+        -complemente: String
         -cidade: String
         -cep: String
-        +Endereco(String rua, int numero, String bairro, String cidade, String cep)
+        +Endereco(String rua, int numero, String complemento, String cidade, String cep)
     }
            
     class Pedido {
