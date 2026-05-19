@@ -15,6 +15,9 @@ public class Telefone {
         this.dimensao = dimensao;
     }
 
+    public Telefone() {
+    }
+
     public int getCodigo() {
         return codigo;
     }
