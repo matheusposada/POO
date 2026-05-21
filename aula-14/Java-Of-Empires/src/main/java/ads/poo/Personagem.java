@@ -9,7 +9,7 @@ public abstract class Personagem {
     public Personagem(int vida, int ataque, double velocidade) {
         this.vida = vida;
         this.ataque = ataque;
-        Velocidade = velocidade;
+        this.Velocidade = velocidade;
     }
 
     public int getVida() {
