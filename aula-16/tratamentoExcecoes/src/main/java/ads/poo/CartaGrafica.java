@@ -2,7 +2,7 @@ package ads.poo;
 
 import edu.princeton.cs.algs4.Draw;
 
-public class CartaGrafica {
+public class CartaGrafica extends Carta implements Gui {
 
     private Naipe naipe;
     private Valor valor;
@@ -19,6 +19,7 @@ public class CartaGrafica {
         this.virada = virada;
     }
 
+    @Override
     public void desenhar(Draw d){
         if(!virada) {
 
@@ -27,15 +28,16 @@ public class CartaGrafica {
             d.picture(x, y, "cartas/fundoa.png");
         }
 
-        d.show();
+
     }
 
-
-
-    public void clicouDentro(int x, int y){
-        if ((x <= 36 && x >= 36) || (y <= 48 && y >= 48)){
-
+    @Override
+    public boolean clicouDentro(double x, double y){
+        if ((x <= this.x + 36 && x >= this.x - 36) && (y <= this.y + 48 && y >= this.y - 48)){
+            virada =!virada;
+            return true;
         }
+            return false;
     }
 
 

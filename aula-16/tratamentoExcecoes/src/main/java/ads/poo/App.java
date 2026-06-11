@@ -19,44 +19,21 @@ public class App implements DrawListener {
         this.draw.addListener(this);
 
 
-
-
-
-
         carta.desenhar(this.draw);
+        this.draw.show();
     }
 
-    CartaGrafica carta = new CartaGrafica(Naipe.COPAS, Valor.DAMA, 100, 100, true);
+    CartaGrafica carta = new CartaGrafica(Naipe.COPAS, Valor.DAMA, 600, 300, true);
 
     @Override
     public void mouseClicked(double x, double y) {
-
-        if
-
-
-
-
-
-
-        //        DrawListener.super.mouseClicked(x, y);
-//
-//        String valores = "123456789qkk";
-//        String naipes = "oecp";
-//        Random r = new Random();
-//
-//        String carta = String.format("cartas/%c%c.png",
-//                valores.charAt(r.nextInt(13)),
-//                naipes.charAt(r.nextInt(4)));
-//
-//
-//
-//
-//        this.draw.picture(x, y, "cartas/1p.png");
-//        this.draw.show();
-
-
+        if (carta.clicouDentro(x, y)) {
+            carta.desenhar(this.draw);
+            this.draw.show();
+        }
 
     }
+
 
     static void main(String[] args) {
         App app = new App();
